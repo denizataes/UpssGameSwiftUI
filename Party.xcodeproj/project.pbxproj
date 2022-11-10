@@ -13,7 +13,6 @@
 		A07279DF290BFFDC00F5AC4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07279DE290BFFDC00F5AC4B /* Assets.xcassets */; };
 		A07279E2290BFFDC00F5AC4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07279E1290BFFDC00F5AC4B /* Preview Assets.xcassets */; };
 		A07279EA290C00FC00F5AC4B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07279E9290C00FC00F5AC4B /* Category.swift */; };
-		A07279F1290C029800F5AC4B /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07279F0290C029800F5AC4B /* CategoryCard.swift */; };
 		A07279F4290C2B1800F5AC4B /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07279F3290C2B1800F5AC4B /* QuestionView.swift */; };
 		A07279F6290C630E00F5AC4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A07279F5290C630E00F5AC4B /* GoogleService-Info.plist */; };
 		A07279F9290C693600F5AC4B /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07279F8290C693600F5AC4B /* CategoryController.swift */; };
@@ -32,7 +31,6 @@
 		A0A88FE0291706EB00F668CE /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A88FDF291706EB00F668CE /* FontManager.swift */; };
 		A0A88FE1291707FB00F668CE /* Piepie-W01-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0A88FDD2917065100F668CE /* Piepie-W01-Regular.ttf */; };
 		A0A88FE42917107700F668CE /* AlfaSlabOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0A88FE32917107700F668CE /* AlfaSlabOne-Regular.ttf */; };
-		A0D8CC0629196F3300274707 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8CC0529196F3300274707 /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +42,6 @@
 		A07279DE290BFFDC00F5AC4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A07279E1290BFFDC00F5AC4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A07279E9290C00FC00F5AC4B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		A07279F0290C029800F5AC4B /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
 		A07279F3290C2B1800F5AC4B /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		A07279F5290C630E00F5AC4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A07279F8290C693600F5AC4B /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
@@ -63,7 +60,6 @@
 		A0A88FDD2917065100F668CE /* Piepie-W01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Piepie-W01-Regular.ttf"; sourceTree = "<group>"; };
 		A0A88FDF291706EB00F668CE /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		A0A88FE32917107700F668CE /* AlfaSlabOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlfaSlabOne-Regular.ttf"; sourceTree = "<group>"; };
-		A0D8CC0529196F3300274707 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		F17DD1072AD05AAB0C72F1D1 /* Pods-Party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party.release.xcconfig"; path = "Target Support Files/Pods-Party/Pods-Party.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +112,6 @@
 				A07279F7290C692600F5AC4B /* Controller */,
 				A07279F5290C630E00F5AC4B /* GoogleService-Info.plist */,
 				A07279F2290C093600F5AC4B /* View */,
-				A07279ED290C025600F5AC4B /* Components */,
 				A07279E8290C00EF00F5AC4B /* Model */,
 				A07279DA290BFFDB00F5AC4B /* PartyApp.swift */,
 				A07279DE290BFFDC00F5AC4B /* Assets.xcassets */,
@@ -144,21 +139,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A07279ED290C025600F5AC4B /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				A07279F0290C029800F5AC4B /* CategoryCard.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		A07279F2290C093600F5AC4B /* View */ = {
 			isa = PBXGroup;
 			children = (
 				A07279DC290BFFDB00F5AC4B /* ContentView.swift */,
 				A07279F3290C2B1800F5AC4B /* QuestionView.swift */,
 				A0A88FCE29169A6A00F668CE /* StartView.swift */,
-				A0D8CC0529196F3300274707 /* CategoryView.swift */,
 				A08E62F8291C1B2100C37057 /* NetworkView.swift */,
 				A08E62FE291C23D000C37057 /* LoadingView.swift */,
 				A08E6300291C2B5E00C37057 /* ActivityIndicator.swift */,
@@ -322,8 +308,6 @@
 				A08E62FF291C23D000C37057 /* LoadingView.swift in Sources */,
 				A08E62FB291C1D4500C37057 /* NetworkController.swift in Sources */,
 				A08E62F9291C1B2100C37057 /* NetworkView.swift in Sources */,
-				A0D8CC0629196F3300274707 /* CategoryView.swift in Sources */,
-				A07279F1290C029800F5AC4B /* CategoryCard.swift in Sources */,
 				A07279DB290BFFDB00F5AC4B /* PartyApp.swift in Sources */,
 				A07279EA290C00FC00F5AC4B /* Category.swift in Sources */,
 				A0727A02290D52CB00F5AC4B /* Question.swift in Sources */,
