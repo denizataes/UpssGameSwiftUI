@@ -32,7 +32,6 @@
 		A0A88FE0291706EB00F668CE /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A88FDF291706EB00F668CE /* FontManager.swift */; };
 		A0A88FE1291707FB00F668CE /* Piepie-W01-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0A88FDD2917065100F668CE /* Piepie-W01-Regular.ttf */; };
 		A0A88FE42917107700F668CE /* AlfaSlabOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0A88FE32917107700F668CE /* AlfaSlabOne-Regular.ttf */; };
-		A0D8CC0629196F3300274707 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D8CC0529196F3300274707 /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +62,6 @@
 		A0A88FDD2917065100F668CE /* Piepie-W01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Piepie-W01-Regular.ttf"; sourceTree = "<group>"; };
 		A0A88FDF291706EB00F668CE /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		A0A88FE32917107700F668CE /* AlfaSlabOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlfaSlabOne-Regular.ttf"; sourceTree = "<group>"; };
-		A0D8CC0529196F3300274707 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		F17DD1072AD05AAB0C72F1D1 /* Pods-Party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party.release.xcconfig"; path = "Target Support Files/Pods-Party/Pods-Party.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,7 +156,6 @@
 				A07279DC290BFFDB00F5AC4B /* ContentView.swift */,
 				A07279F3290C2B1800F5AC4B /* QuestionView.swift */,
 				A0A88FCE29169A6A00F668CE /* StartView.swift */,
-				A0D8CC0529196F3300274707 /* CategoryView.swift */,
 				A08E62F8291C1B2100C37057 /* NetworkView.swift */,
 				A08E62FE291C23D000C37057 /* LoadingView.swift */,
 				A08E6300291C2B5E00C37057 /* ActivityIndicator.swift */,
@@ -322,7 +319,6 @@
 				A08E62FF291C23D000C37057 /* LoadingView.swift in Sources */,
 				A08E62FB291C1D4500C37057 /* NetworkController.swift in Sources */,
 				A08E62F9291C1B2100C37057 /* NetworkView.swift in Sources */,
-				A0D8CC0629196F3300274707 /* CategoryView.swift in Sources */,
 				A07279F1290C029800F5AC4B /* CategoryCard.swift in Sources */,
 				A07279DB290BFFDB00F5AC4B /* PartyApp.swift in Sources */,
 				A07279EA290C00FC00F5AC4B /* Category.swift in Sources */,
