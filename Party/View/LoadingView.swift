@@ -14,7 +14,8 @@ struct LoadingView: View {
                 .ignoresSafeArea()
                 .shadow(radius: 80)
             
-            ProgressView("İçkileri Hazırla, Yükleniyor...🥂")
+            ProgressView("İçkileri Hazırla, Yükleniyor...")
+            //deneme
                 .foregroundColor(.black)
                 .shadow(radius: 50)
                 .scaleEffect(1.5, anchor: .center)
