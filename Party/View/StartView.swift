@@ -10,19 +10,21 @@ import SwiftUI
 struct StartView: View {
     @State var showWalkThroughScreens: Bool = false
     @State var currentIndex: Int = 0
-    @State var isLoading: Bool = false
-    
+    @ObservedObject var monitor = NetworkController()
     @AppStorage("isFirstExecute") var showHomeView: Bool = false
-  
 
     
     var body: some View {
         ZStack{
             
             if showHomeView{
-                ContentView(showHomeView: $showHomeView)
-                    .animation(.default.speed(0.5), value: showHomeView)
-                
+                if monitor.isConnected{
+                    ContentView(showHomeView: $showHomeView)
+                        .animation(.default.speed(0.5), value: showHomeView)
+                }
+                else{
+                    NetworkView()
+                }
             }
             else{
                 
@@ -42,7 +44,7 @@ struct StartView: View {
             }
         }
     }
-
+    
     
     
     //MARK: WalkThrough Screens
@@ -101,12 +103,12 @@ struct StartView: View {
                 .onTapGesture {
                     if(isLast){
                         let impactMed = UIImpactFeedbackGenerator(style: .heavy)
-                         impactMed.impactOccurred()
+                        impactMed.impactOccurred()
                         showHomeView = true
                     }
                     else{
                         let impactMed = UIImpactFeedbackGenerator(style: .light)
-                         impactMed.impactOccurred()
+                        impactMed.impactOccurred()
                         currentIndex += 1
                     }
                 }
@@ -161,13 +163,13 @@ struct StartView: View {
             Button{
                 if currentIndex > 0{
                     let impactMed = UIImpactFeedbackGenerator(style: .light)
-                     impactMed.impactOccurred()
+                    impactMed.impactOccurred()
                     currentIndex -= 1
-                  
+                    
                 }
                 else{
                     let impactMed = UIImpactFeedbackGenerator(style: .light)
-                     impactMed.impactOccurred()
+                    impactMed.impactOccurred()
                     showWalkThroughScreens.toggle()
                 }
                 
@@ -181,7 +183,7 @@ struct StartView: View {
             
             Button("Oyalama Geç 😏"){
                 let impactMed = UIImpactFeedbackGenerator(style: .heavy)
-                 impactMed.impactOccurred()
+                impactMed.impactOccurred()
                 showHomeView = true
             }
             .foregroundColor(.brown)
@@ -232,7 +234,7 @@ struct StartView: View {
                         .shadow(radius: 5)
                         .onTapGesture {
                             let impactMed = UIImpactFeedbackGenerator(style: .light)
-                             impactMed.impactOccurred()
+                            impactMed.impactOccurred()
                             showWalkThroughScreens.toggle()
                         }
                 }
