@@ -112,7 +112,6 @@
 				A07279F7290C692600F5AC4B /* Controller */,
 				A07279F5290C630E00F5AC4B /* GoogleService-Info.plist */,
 				A07279F2290C093600F5AC4B /* View */,
-				A07279ED290C025600F5AC4B /* Components */,
 				A07279E8290C00EF00F5AC4B /* Model */,
 				A07279DA290BFFDB00F5AC4B /* PartyApp.swift */,
 				A07279DE290BFFDC00F5AC4B /* Assets.xcassets */,
@@ -138,13 +137,6 @@
 				A0A88FD22916A95200F668CE /* GifImage.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		A07279ED290C025600F5AC4B /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		A07279F2290C093600F5AC4B /* View */ = {

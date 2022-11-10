@@ -109,13 +109,7 @@ struct ContentView: View {
         .buttonStyle(.plain)
         .navigationTitle("Kategoriler 🔥")
         .navigationBarTitleDisplayMode(.large)
-        .navigationBarHidden(true)
-        
-        
-        
-        
-        
-        
+        .navigationBarHidden(true)   
     }
     
     func loading(){
@@ -127,9 +121,6 @@ struct ContentView: View {
         }
         
     }
-    
-    
-    
     struct ContentView_Previews: PreviewProvider {
         @State static var value = false
         
@@ -137,88 +128,4 @@ struct ContentView: View {
             ContentView(showHomeView: $value)
         }
     }
-    
-    struct Header: View {
-        var body: some View {
-            HStack{
-                Text("Kategoriler 🔥")
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.horizontal,20)
-                    .padding(.vertical,20)
-                    .frame(alignment: .leading)
-                
-                
-                Spacer()
-                VStack(spacing: -20){
-                    Image("memoji")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 50,height: 50)
-                        .padding()
-                    
-                }
-                
-            }
-        }
-        
-    }
-    
-    struct CategoryView: View {
-        @ObservedObject var categoryController = CategoryController()
-        var body: some View {
-            ScrollView(.horizontal,showsIndicators: false){
-                HStack(spacing: 0){
-                    ForEach(categoryController.categoryList, id: \.id){ category in
-                        GeometryReader{ geometry in
-                            NavigationLink(
-                                
-                                destination: QuestionView(categoryName: category.name, categoryImage: category.image)
-                            )
-                            {
-                                CategoryCard(category: category)
-                            }
-                            .rotation3DEffect(Angle(degrees: (Double(geometry.frame(in: .global).minX)-40) / 20), axis:  (x:0, y:0, z:0))
-                            .navigationTitle("Kategoriler 🔥")
-                            .navigationBarTitleDisplayMode(.large)
-                            .navigationBarHidden(true)
-                            
-                            
-                            
-                        }
-                        .buttonStyle(.plain)
-                        
-                    }
-                    .frame(width: 180, height: 300)
-                    .padding()
-                }
-            }
-            
-            //CategoryView()
-        }
-    }
-    
-    struct PlayAgain: View {
-        @ObservedObject var categoryController = CategoryController()
-        var body: some View {
-            VStack(spacing: 0){
-                Text("Yeniden Oyna 🕹")
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.horizontal,20)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                ScrollView(.horizontal,showsIndicators: false){
-                    HStack(spacing: 0){
-                        if(categoryController.categoryList.count > 0){
-                            CategoryCard(category: categoryController.categoryList[2])
-                                .padding()
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
 }
