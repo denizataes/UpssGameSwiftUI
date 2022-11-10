@@ -29,7 +29,7 @@ var colorList: [Color] = [
     Color(red: 255/255, green: 201/255, blue: 233/255),
     Color(red: 248/255, green: 255/255, blue: 170/255)
 ]
-//Deneme
+
 
 
 
