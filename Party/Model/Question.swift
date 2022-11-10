@@ -1,13 +1,5 @@
-//
-//  Question.swift
-//  Party
-//
-//  Created by Deniz Ata Eş on 29.10.2022.
-//
-
 import Foundation
 import SwiftUI
-
 
 struct Question: Identifiable{
     var id: String = UUID().uuidString
