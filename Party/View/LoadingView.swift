@@ -15,6 +15,7 @@ struct LoadingView: View {
                 .shadow(radius: 80)
             
             ProgressView("İçkileri Hazırla, Yükleniyor...")
+            //deneme
             
                 .foregroundColor(.black)
                 .shadow(radius: 50)
