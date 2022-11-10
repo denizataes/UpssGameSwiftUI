@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Party
-//
-//  Created by Deniz Ata Eş on 28.10.2022.
-//
-
 import SwiftUI
 import Foundation
 
