@@ -116,14 +116,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "A1552FFA-B862-4A49-B659-73BA7E5B1B92 - 16c1898200ae5754"
+                  uuid = "A1552FFA-B862-4A49-B659-73BA7E5B1B92 - 90c63b44e5f20b56"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Party.CategoryController.getCategories() -&gt; ()"
                   moduleName = "Party"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denizataes/Desktop/XCodeProjects/Party/Party/Controller/CategoryController.swift"
+                  urlString = "file:///Users/denizataes/Desktop/XCodeProjects/UpssGame/Party/Controller/CategoryController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "30"
@@ -131,14 +131,14 @@
                   offsetFromSymbolStart = "328">
                </Location>
                <Location
-                  uuid = "A1552FFA-B862-4A49-B659-73BA7E5B1B92 - 2d8632256fe22f4b"
+                  uuid = "A1552FFA-B862-4A49-B659-73BA7E5B1B92 - ab8180e38abe7349"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Party.CategoryController.getCategories() -&gt; ()"
                   moduleName = "Party"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/denizataes/Desktop/XCodeProjects/Party/Party/Controller/CategoryController.swift"
+                  urlString = "file:///Users/denizataes/Desktop/XCodeProjects/UpssGame/Party/Controller/CategoryController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "31"
@@ -574,8 +574,8 @@
             filePath = "Party/View/StartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "NavBar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -802,6 +802,149 @@
             endingLineNumber = "16"
             landmarkName = "NetworkController"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B4CC62B3-EA0C-4048-AD8F-151F99D11E08"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Party/Controller/CategoryController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getCategories()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94D31127-270E-4CFC-A8AF-7ECA1398C12B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Party/Controller/CategoryController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getCategories()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39860C25-2661-4FC2-8E2A-9E75F60A8657"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Party/Controller/NetworkController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "39860C25-2661-4FC2-8E2A-9E75F60A8657 - c0fff716d2fdfc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Party.NetworkController.init() -&gt; Party.NetworkController"
+                  moduleName = "Party"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denizataes/Desktop/XCodeProjects/UpssGame/Party/Controller/NetworkController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "448">
+               </Location>
+               <Location
+                  uuid = "39860C25-2661-4FC2-8E2A-9E75F60A8657 - 855730336157f37e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Network.NWPath) -&gt; () in Party.NetworkController.init() -&gt; Party.NetworkController"
+                  moduleName = "Party"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denizataes/Desktop/XCodeProjects/UpssGame/Party/Controller/NetworkController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "39860C25-2661-4FC2-8E2A-9E75F60A8657 - 197fd3ee370f78e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Network.NWPath) -&gt; () in Party.NetworkController.init() -&gt; Party.NetworkController"
+                  moduleName = "Party"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/denizataes/Desktop/XCodeProjects/UpssGame/Party/Controller/NetworkController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2E03036-E81A-43EF-861E-EA0061668B4B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Party/View/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4327B9E8-A4D2-4C35-A1FF-75D2D38A0E56"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Party/View/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DDE002E-8F08-4F59-A56B-C2258EB17BF7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Party/View/StartView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

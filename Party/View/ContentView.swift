@@ -5,8 +5,8 @@ struct ContentView: View {
     var columns = [GridItem(.adaptive(minimum: 160),spacing: 20)]
     @Binding var showHomeView: Bool
     @Namespace var namespace
-    @ObservedObject var categoryController = CategoryController()
-    @State var isLoading: Bool = false
+    @StateObject var categoryController = CategoryController()
+    
     var body: some View {
         
         
@@ -68,7 +68,6 @@ struct ContentView: View {
             }
             else
             {
-                
                 ActivityIndicator()
                     .frame(width: 100,height: 100)
                     .foregroundColor(.pink)
@@ -104,16 +103,8 @@ struct ContentView: View {
         .navigationBarTitleDisplayMode(.large)
         .navigationBarHidden(true)   
     }
+
     
-    func loading(){
-        isLoading = true;
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
-            
-            isLoading = false;
-        }
-        
-    }
     struct ContentView_Previews: PreviewProvider {
         @State static var value = false
         

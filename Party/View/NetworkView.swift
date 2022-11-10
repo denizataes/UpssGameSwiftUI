@@ -8,30 +8,33 @@
 import SwiftUI
 
 struct NetworkView: View {
-    @ObservedObject var monitor = NetworkController()
+  
     var body: some View {
         ZStack{
-            Color(.black)
-                .ignoresSafeArea()
-            
-            VStack{
-                Image(systemName: monitor.isConnected ? "wifi" : "wifi.slash")
-                    .resizable()
-                    .foregroundColor(.white)
-                    .scaledToFit()
-                    .frame(width:200, height: 200)
-                    .padding(.vertical, 10)
-                
-                Text(monitor.isConnected ? "İnternet Bağlı" : "İnternet yok ⚠️ Ya da kafan iyi internetini açmayı unuttun ? ")
-                    .foregroundColor(.white)
-                    .padding()
-                    .background{
-                        Capsule()
-                            .fill(Color(monitor.isConnected ? .blue : .red))
-                    }
+    
+            Color(.systemBackground)
+                    .ignoresSafeArea()
+                VStack{
+                    Image(systemName: "wifi.slash")
+                        .resizable()
+                        .foregroundColor(Color("FontColor"))
+                        .scaledToFit()
+                        .frame(width:200, height: 200)
+                        .padding(.vertical, 10)
+                        
+                    
+                    Text("İnternet yok ⚠️ Ya da kafan iyi internetini açmayı unuttun ? ")
+                        .foregroundColor(Color(.systemBackground))
+                        .padding()
+                        .background{
+                            Capsule()
+                                .fill(Color("FontColor"))
+                        }
+                        .font(.callout)
+                }
             }
-        }
-      
+        .navigationBarHidden(true)
+        
     }
 }
 
