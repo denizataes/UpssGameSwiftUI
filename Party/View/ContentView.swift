@@ -7,35 +7,13 @@ struct ContentView: View {
     @Namespace var namespace
     @StateObject var categoryController = CategoryController()
     
+
+    
     var body: some View {
-        
+
         
         VStack{
-            
-            HStack{
-                Text("Kategoriler 🔥")
-                    .foregroundColor(Color("FontColor"))
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding(.horizontal,20)
-                    .padding(.vertical,20)
-                    .frame(alignment: .leading)
-                
-                
-                Spacer()
-                VStack{
-                    Image("memoji")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 50,height: 50)
-                        .padding()
-                    
-                }
-                
-            }
-            
             Spacer()
-            
             if categoryController.categoryList.count > 0
             {
                 ScrollView(.horizontal, showsIndicators: false){
@@ -98,10 +76,9 @@ struct ContentView: View {
             categoryController.getCategories()
         }
         .shadow(radius: 20)
-        .buttonStyle(.plain)
         .navigationTitle("Kategoriler 🔥")
         .navigationBarTitleDisplayMode(.large)
-        .navigationBarHidden(true)   
+        
     }
 
     
