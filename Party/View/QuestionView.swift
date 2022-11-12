@@ -1,47 +1,34 @@
-//
-//  QuestionView.swift
-//  Party
-//
-//  Created by Deniz Ata Eş on 28.10.2022.
-//
-
 import SwiftUI
 
 struct QuestionView: View {
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    @GestureState private var dragOffset = CGSize.zero
     
     var categoryName: String
     var categoryImage: String
     @StateObject var questionController = QuestionController()
     @State var cards: [Question] = []
-
     
     var body: some View {
-        
-
-        
-        ZStack {
-                ZStack{
-                    if questionController.loading{
-                        ActivityIndicator()
-                            .frame(width: 100,height: 100)
-                            .foregroundColor(.pink)
+        ZStack{
+            if questionController.loading{
+                ActivityIndicator()
+                    .frame(width: 100,height: 100)
+                    .foregroundColor(.white)
+            }
+            else
+            {
+                BoomerangCard(cards: $cards)
+                    .frame(height: 500)
+                    .padding(.horizontal, 15)
+                    .onAppear{
+                        setupCards()
                     }
-                    else
-                    {
-                        BoomerangCard(cards: $cards)
-                            .frame(height: 500)
-                            .padding(.horizontal, 15)
-                            .onAppear{
-                                setupCards()
-                            }
-                            .offset(y:50)
-                    }
-                    
-                }
-                
-                
+                    .offset(y:50)
+            }
             
-        }.onAppear{
+        }
+        .onAppear{
             questionController.getQuestion(categoryName: categoryName)
         }
         .background(
@@ -50,18 +37,30 @@ struct QuestionView: View {
                         (categoryName == "Edepsizler" ? "dirty" :
                             (categoryName == "Arkadaşlar" ? "friends" : "lovers")))
                  )
-                .resizable()
-                //.opacity(0.50)
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            .resizable()
+            .scaledToFill()
+            .edgesIgnoringSafeArea(.all)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         )
-        .navigationBarTitleDisplayMode(.inline)
-        
-        
-        
-        
-        
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action : {
+            self.mode.wrappedValue.dismiss()
+        }){
+            HStack{
+                Image(systemName: "arrow.left")
+                Text("Kategoriler")
+            }
+            .foregroundColor(.white)
+            .fontWeight(.bold)
+        })
+        .edgesIgnoringSafeArea(.top)
+                .gesture(DragGesture().updating($dragOffset, body: { (value, state, transaction) in
+                
+                    if(value.startLocation.x < 20 && value.translation.width > 100) {
+                        self.mode.wrappedValue.dismiss()
+                    }
+                    
+                }))
     }
     
     func setupCards(){
@@ -80,8 +79,8 @@ struct QuestionView: View {
             first.id = UUID().uuidString
             cards.append(first)
         }
-        //}
     }
+    
 }
 
 
@@ -90,18 +89,6 @@ struct QuestionView_Previews: PreviewProvider {
         QuestionView(categoryName: "Arkadaşlar", categoryImage: "friends")
     }
 }
-
-//struct LoadingView: View {
-//    var body: some View {
-//        ZStack {
-//            Color.black
-//                .opacity(0.5)
-//                .edgesIgnoringSafeArea(.all)
-//            Text("Loading")
-//        }
-//    }
-//}
-
 struct BoomerangCard: View {
     var isRotationEnabled: Bool = true
     var isBlurEnabled: Bool = false
@@ -121,7 +108,7 @@ struct BoomerangCard: View {
                     CardView(card: card, size: size)
                     // MARK: Moving Only Current Active Card
                         .offset(y: currentIndex == indexOf(card: card) ? offset : 0)
-                  
+                    
                 }
                 
             }
@@ -138,8 +125,8 @@ struct BoomerangCard: View {
     
     // MARK: Gesture Calls
     func onChanged(value: DragGesture.Value){
-//        let impactMed = UIImpactFeedbackGenerator(style: .soft)
-//         impactMed.impactOccurred()
+        //        let impactMed = UIImpactFeedbackGenerator(style: .soft)
+        //         impactMed.impactOccurred()
         offset = currentIndex == (cards.count - 1) ? 0 : value.translation.height
         
     }
@@ -213,7 +200,7 @@ struct BoomerangCard: View {
             offset = .zero
         }
         let impactMed = UIImpactFeedbackGenerator(style: .heavy)
-         impactMed.impactOccurred()
+        impactMed.impactOccurred()
         impactMed.impactOccurred()
         impactMed.impactOccurred()
         
@@ -231,16 +218,16 @@ struct BoomerangCard: View {
         let index = indexOf(card: card)
         
         ZStack{
-        
+            
             Image(card.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: size.width, height: size.height)
-
+            
             HStack(spacing: 15){
-//                Text("")
-//                    .padding()
-//                Spacer()
+                //                Text("")
+                //                    .padding()
+                //                Spacer()
                 Text(card.question)
                     .foregroundColor(card.image == "background2" ? Color(red: 255/255, green: 168/255, blue: 0) :
                                         (card.image == "background3" ? Color(red: 0, green: 115/255, blue: 255/255):

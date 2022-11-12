@@ -20,7 +20,6 @@ struct StartView: View {
             if showHomeView{
                 if monitor.isConnected{
                     ContentView(showHomeView: $showHomeView)
-                        .animation(.default.speed(0.5), value: showHomeView)
                 }
                 else{
                     NetworkView()
