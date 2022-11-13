@@ -4,7 +4,7 @@ struct StartView: View {
     @State var showWalkThroughScreens: Bool = false
     @State var currentIndex: Int = 0
     @ObservedObject var monitor = NetworkController()
-    @AppStorage("isFirstExecute") var showHomeView: Bool = false
+    @State var showHomeView: Bool = false
 
     
     var body: some View {
@@ -68,6 +68,7 @@ struct StartView: View {
                         .fontWeight(.semibold)
                         .scaleEffect(!isLast ? 1 : 0.001)
                         .opacity(!isLast ? 1 : 0)
+                        
                     
                     HStack{
                         Text("Başla🔥")
@@ -104,7 +105,7 @@ struct StartView: View {
                         currentIndex += 1
                     }
                 }
-                .offset(y: isLast ? -40: -90)
+                .offset(y: isLast ? -10: -10)
                 .animation(.interactiveSpring(response: 0.9, dampingFraction: 0.8, blendDuration: 0.5), value: isLast)
             }
             .offset(y:showWalkThroughScreens ? 0 : size.height)
@@ -215,7 +216,7 @@ struct StartView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
                     
-                    Text("Haydi Başlayalım")
+                    Text("Nasıl Oynanır?")
                         .padding(.horizontal, 40)
                         .padding(.vertical, 14)
                         .foregroundColor(.white)

@@ -8,9 +8,12 @@ struct QuestionView: View {
     var categoryImage: String
     @StateObject var questionController = QuestionController()
     @State var cards: [Question] = []
+    @State var showAddPopUp: Bool = false
     
     var body: some View {
         ZStack{
+         
+
             if questionController.loading{
                 ActivityIndicator()
                     .frame(width: 100,height: 100)
@@ -19,7 +22,7 @@ struct QuestionView: View {
             else
             {
                 BoomerangCard(cards: $cards)
-                    //.frame(height: 500)
+                    
                     .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height/1.55)
                     .padding(.horizontal, 15)
                     .onAppear{
@@ -27,6 +30,9 @@ struct QuestionView: View {
                     }
                     .offset(y:50)
             }
+            
+            AddQuestionView(showAddPopUp: $showAddPopUp,categoryName: categoryName)
+            
             
         }
         .onAppear{
@@ -53,6 +59,20 @@ struct QuestionView: View {
             }
             .foregroundColor(.white)
             .fontWeight(.bold)
+            .opacity(showAddPopUp ? 0 : 1)
+            .transition(.slide)
+        })
+        .navigationBarItems(trailing: Button(action : {
+            showAddPopUp.toggle()
+        }){
+            HStack{
+                Image(systemName: showAddPopUp ? "xmark" : "plus")
+                Text(showAddPopUp ? "Kapat" : "Soru Ekle")
+                    
+            }
+            .transition(.opacity)
+            .foregroundColor(.white)
+            .fontWeight(.bold)
         })
         .edgesIgnoringSafeArea(.top)
                 .gesture(DragGesture().updating($dragOffset, body: { (value, state, transaction) in
@@ -62,6 +82,7 @@ struct QuestionView: View {
                     }
                     
                 }))
+                
     }
     
 
@@ -88,13 +109,14 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(categoryName: "Arkadaşlar", categoryImage: "friends")
+        QuestionView(categoryName: "girls", categoryImage: "girlsBackground")
     }
 }
 struct BoomerangCard: View {
     var isRotationEnabled: Bool = true
     var isBlurEnabled: Bool = false
     @Binding var cards: [Question]
+    
     
     //MARK : Gesture Properties
     @State var offset: CGFloat = 0
@@ -201,10 +223,9 @@ struct BoomerangCard: View {
         }else{
             offset = .zero
         }
-        let impactMed = UIImpactFeedbackGenerator(style: .heavy)
+        let impactMed = UIImpactFeedbackGenerator(style: .soft)
         impactMed.impactOccurred()
-        impactMed.impactOccurred()
-        impactMed.impactOccurred()
+
         
     }
     
@@ -218,7 +239,7 @@ struct BoomerangCard: View {
     @ViewBuilder
     func CardView(card: Question, size: CGSize) ->some View{
         let index = indexOf(card: card)
-        
+        let questionController = QuestionController()
         ZStack{
             
             Image(card.image)
@@ -226,6 +247,19 @@ struct BoomerangCard: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: getScreenBounds().width/1.1, height: getScreenBounds().height/1.55)
             
+            Image(systemName: "minus.circle")
+                .foregroundColor(.red)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                .padding()
+                .onTapGesture {
+                    let impactMed = UIImpactFeedbackGenerator(style: .heavy)
+                    impactMed.impactOccurred()
+                    
+                    questionController.deleteData(question: card.question)
+                }
+
+                
+        
             HStack(spacing: 15){
                 //                Text("")
                 //                    .padding()
@@ -238,7 +272,9 @@ struct BoomerangCard: View {
                                                     (card.image == "background" ? Color(red: 255/255, green: 109/255, blue: 195/255) : Color(red: 84/255, green: 158/255, blue: 16/255))))))
                 
                     .fontWeight(.bold)
-                    .font(.custom(FontManager.Pie.font, size: 35))
+                    .font(.custom(FontManager.Pie.font, size: card.question.count > 70 ? 25 : 35))
+
+                    //.font(.custom(FontManager.Pie.font, size: 35))
                     .frame(alignment: .trailing)
                     .padding(.horizontal, 35)
                     .multilineTextAlignment(.center)
