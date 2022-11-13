@@ -6,14 +6,13 @@ struct ContentView: View {
     @Binding var showHomeView: Bool
     @Namespace var namespace
     @StateObject var categoryController = CategoryController()
+    @State var showHome : Bool = false
     
-
+    
     
     var body: some View {
-
         
         VStack{
-            Spacer()
             if categoryController.categoryList.count > 0
             {
                 ScrollView(.horizontal, showsIndicators: false){
@@ -31,7 +30,7 @@ struct ContentView: View {
                                 Image(category.image)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 320, height: 550)
+                                    .frame(width: getScreenBounds().width/1.2, height: getScreenBounds().height/1.55)
                                     .cornerRadius(20)
                                     .padding(7)
                                     .shadow(radius: 3)
@@ -41,36 +40,16 @@ struct ContentView: View {
                         
                     }
                     .padding()
-                    Spacer()
+                    
                 }
             }
             else
             {
                 ActivityIndicator()
-                    .frame(width: 100,height: 100)
+                    .frame(width: 80,height: 80)
                     .foregroundColor(.pink)
                 
             }
-            Spacer()
-            HStack{
-                Spacer()
-                ZStack{
-                    Image("")
-                        .resizable()
-                        .frame(width: 45, height: 45)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.white, lineWidth: 3))
-                        .shadow(radius: 15)
-                        .onTapGesture {
-                            let impactMed = UIImpactFeedbackGenerator(style: .light)
-                            impactMed.impactOccurred()
-                            showHomeView.toggle()
-                        }
-                    Text("🤔")
-                        .font(.callout)
-                }
-            }
-            .padding(.horizontal,25)
         }
         .onAppear{
             categoryController.getCategories()
@@ -79,8 +58,37 @@ struct ContentView: View {
         .navigationTitle("Kategoriler 🔥")
         .navigationBarTitleDisplayMode(.large)
         
-    }
+        
+//        ZStack{
+//
+//            Image("")
+//                .resizable()
+//                .frame(width: getScreenBounds().height / 20, height: getScreenBounds().height / 24)
+//                .clipShape(Circle())
+//                .overlay(Circle().stroke(Color.white, lineWidth: 3))
+//                .shadow(radius: 15)
+//                .onTapGesture {
+//                    let impactMed = UIImpactFeedbackGenerator(style: .light)
+//                    impactMed.impactOccurred()
+//                    showHomeView.toggle()
+//                }
+//            Text("🤔")
+//                .font(.system(size: getScreenBounds().height / 56, weight: .regular, design: .default))
+//        }
+//        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+//        .ignoresSafeArea(.all, edges: .bottom)
+//        .padding(.vertical,getScreenBounds().height/150)
+//        .padding(.horizontal,getScreenBounds().width/30)
 
+
+        
+            
+            //getScreenBounds().height < 500 ? .trailing : .horizontal)
+        
+        
+        
+    }
+    
     
     struct ContentView_Previews: PreviewProvider {
         @State static var value = false
@@ -88,5 +96,10 @@ struct ContentView: View {
         static var previews: some View {
             ContentView(showHomeView: $value)
         }
+    }
+}
+extension ContentView{
+    func getScreenBounds() -> CGRect{
+        return UIScreen.main.bounds
     }
 }

@@ -19,7 +19,8 @@ struct QuestionView: View {
             else
             {
                 BoomerangCard(cards: $cards)
-                    .frame(height: 500)
+                    //.frame(height: 500)
+                    .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height/1.55)
                     .padding(.horizontal, 15)
                     .onAppear{
                         setupCards()
@@ -63,6 +64,7 @@ struct QuestionView: View {
                 }))
     }
     
+
     func setupCards(){
         
         var count = 1
@@ -137,7 +139,7 @@ struct BoomerangCard: View {
         translation = (translation < 0 ? -translation : 0)
         translation = (currentIndex == (cards.count - 1) ? 0 : translation)
         // MARK: Since our card height = 220
-        if translation > 150{
+        if translation > 85{
             
             withAnimation(.spring(response: 0.5,dampingFraction: 0.6,blendDuration: 0.6)){
                 // applying rotation and extra offset
@@ -222,7 +224,7 @@ struct BoomerangCard: View {
             Image(card.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: size.width, height: size.height)
+                .frame(width: getScreenBounds().width/1.1, height: getScreenBounds().height/1.55)
             
             HStack(spacing: 15){
                 //                Text("")
@@ -298,6 +300,9 @@ struct BoomerangCard: View {
             return index
         }
         return 0
+    }
+    func getScreenBounds() -> CGRect{
+        return UIScreen.main.bounds
     }
     
 }

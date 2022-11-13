@@ -1,10 +1,3 @@
-//
-//  StartView.swift
-//  Party
-//
-//  Created by Deniz Ata Eş on 5.11.2022.
-//
-
 import SwiftUI
 
 struct StartView: View {

@@ -7,4 +7,4 @@ struct Category: Identifiable{
     var image: String
     var price: String
 }
-//deneme
+
