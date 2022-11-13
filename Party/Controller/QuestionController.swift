@@ -78,4 +78,49 @@ class QuestionController: ObservableObject{
         }
     }
     
+    func addData(categoryName: String, question:String)
+    {
+        let db = Firestore.firestore()
+        
+        db.collection("Questions").addDocument(data: [
+            "Category":categoryName,
+            "Question":question
+        ]) { (error) in
+            if let e = error{
+                print("there was a error, \(e.localizedDescription)")
+            }
+            else
+            {
+                print("success")
+            }
+        }
+    }
+    
+    func deleteData(question:String)
+    {
+        let db = Firestore.firestore()
+        db.collection("Questions").whereField("Question", isEqualTo: question).getDocuments{(snap, err) in
+            if err != nil{
+                print("error")
+                return
+            }
+            
+            for i in snap!.documents{
+                DispatchQueue.main.async {
+                    i.reference.delete()
+                }
+            }
+            
+            
+        }
+        // Remove the post from the DB
+//        ref.child("posts").child(postId).removeValue { error in
+//          if error != nil {
+//              print("error \(error)")
+//          }
+//        }
+        
+    }
+
+    
 }

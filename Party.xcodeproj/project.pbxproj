@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6338638668368882902AEB00 /* Pods_Party.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE5569C6661344BB2BC4E07 /* Pods_Party.framework */; };
+		A0549FCF2920D9EC0002FBAB /* AddQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0549FCE2920D9EC0002FBAB /* AddQuestionView.swift */; };
 		A07279DB290BFFDB00F5AC4B /* PartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07279DA290BFFDB00F5AC4B /* PartyApp.swift */; };
 		A07279DD290BFFDB00F5AC4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07279DC290BFFDB00F5AC4B /* ContentView.swift */; };
 		A07279DF290BFFDC00F5AC4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07279DE290BFFDC00F5AC4B /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		1AE5569C6661344BB2BC4E07 /* Pods_Party.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Party.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81A403D12A04EAC55DCE9649 /* Pods-Party.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party.debug.xcconfig"; path = "Target Support Files/Pods-Party/Pods-Party.debug.xcconfig"; sourceTree = "<group>"; };
+		A0549FCE2920D9EC0002FBAB /* AddQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionView.swift; sourceTree = "<group>"; };
 		A07279D7290BFFDB00F5AC4B /* Party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Party.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07279DA290BFFDB00F5AC4B /* PartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyApp.swift; sourceTree = "<group>"; };
 		A07279DC290BFFDB00F5AC4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				A0A88FCE29169A6A00F668CE /* StartView.swift */,
 				A08E62F8291C1B2100C37057 /* NetworkView.swift */,
 				A08E6300291C2B5E00C37057 /* ActivityIndicator.swift */,
+				A0549FCE2920D9EC0002FBAB /* AddQuestionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				A08E62FB291C1D4500C37057 /* NetworkController.swift in Sources */,
 				A08E62F9291C1B2100C37057 /* NetworkView.swift in Sources */,
 				A07279DB290BFFDB00F5AC4B /* PartyApp.swift in Sources */,
+				A0549FCF2920D9EC0002FBAB /* AddQuestionView.swift in Sources */,
 				A07279EA290C00FC00F5AC4B /* Category.swift in Sources */,
 				A0727A02290D52CB00F5AC4B /* Question.swift in Sources */,
 				A07279F9290C693600F5AC4B /* CategoryController.swift in Sources */,

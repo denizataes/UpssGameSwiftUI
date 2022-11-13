@@ -9,6 +9,16 @@ struct Intro: Identifiable{
 }
 
 var intros: [Intro] = [
-    .init(imageName: "cheers", title: "İçkiler hazır mı ? ", description: "Sarhoş olup, eğlencenin dibine vurmaya hazır mıyız ? 🔥🥂🍷"),
-    .init(imageName: "cheers3", title: "Nasıl Oynanır?", description: "Kategoriler içerisinde 100'den farklı soru bulunur, ortama göre kategorini seç ve kartları fırlat ! ⚡️")
+    .init(imageName: "cheers", title: "BEN HİÇ...",
+          description: "Bu tür kartlarda yazanı yapmış olanlar içer..."),
+    .init(imageName: "cheers3", title: "OYLAMA SORULARI",
+          description: "Bu tür kartlarda sorulan soru için oylama yapılır, en çok oyu alan oyuncu içer."),
+    .init(imageName: "cheers3", title: "DOĞRULUK MU CESARETLİK Mİ?",
+          description: "Bu tür kartlar eğlence için var. İçip içmemek size kalmış.")
     ]
+
+//
+//var intros: [Intro] = [
+//    .init(imageName: "cheers", title: "İçkiler hazır mı ? ", description: "Sarhoş olup, eğlencenin dibine vurmaya hazır mıyız ? 🔥🥂🍷"),
+//    .init(imageName: "cheers3", title: "Nasıl Oynanır?", description: "Kategoriler içerisinde 100'den farklı soru bulunur, ortama göre kategorini seç ve kartları fırlat ! ⚡️")
+//    ]
