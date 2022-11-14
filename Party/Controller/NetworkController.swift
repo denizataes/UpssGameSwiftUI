@@ -1,10 +1,3 @@
-//
-//  NetworkController.swift
-//  Party
-//
-//  Created by Deniz Ata Eş on 9.11.2022.
-//
-
 import Foundation
 import Network
 

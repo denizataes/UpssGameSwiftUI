@@ -5,7 +5,7 @@ struct StartView: View {
     @State var currentIndex: Int = 0
     @ObservedObject var monitor = NetworkController()
     @State var showHomeView: Bool = false
-
+    
     
     var body: some View {
         ZStack{
@@ -21,7 +21,7 @@ struct StartView: View {
             else{
                 
                 ZStack{
-                    Color("BG")
+                    Color(.systemBackground)
                         .ignoresSafeArea()
                     
                     IntroScreen()
@@ -68,7 +68,7 @@ struct StartView: View {
                         .fontWeight(.semibold)
                         .scaleEffect(!isLast ? 1 : 0.001)
                         .opacity(!isLast ? 1 : 0)
-                        
+                    
                     
                     HStack{
                         Text("Başla🔥")
@@ -91,7 +91,7 @@ struct StartView: View {
                 .foregroundColor(.white)
                 .background{
                     RoundedRectangle(cornerRadius: isLast ? 10 : 30, style: isLast ? .continuous : .circular)
-                        .fill(Color(.brown))
+                        .fill(Color(red: 26/255, green: 166/255, blue: 105/255))
                 }
                 .onTapGesture {
                     if(isLast){
@@ -120,31 +120,35 @@ struct StartView: View {
         
         VStack{
             
-            
-            GifImage(intro.imageName)
-                .frame(width: 350,height: 400, alignment: .top)
-                .padding(.horizontal,20)
+            Image(intro.imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: UIScreen.main.bounds.width / 1,height: UIScreen.main.bounds.height / 1.8, alignment: .top)
+                .cornerRadius(20)
+                .padding(.top,10)
+                .padding(.vertical,30)
                 .offset(x: -size.width * CGFloat(currentIndex - index))
-                .animation(.interactiveSpring(response: 0.9, dampingFraction: 0.8, blendDuration: 0.5).delay(currentIndex == index ? 0 : 0.2), value: currentIndex)
+                .animation(.interactiveSpring(response: 0.7, dampingFraction: 0.8, blendDuration: 0.5), value: currentIndex)
             
             VStack(spacing: 10){
+                
                 Text(intro.title)
                     .offset(x: -size.width * CGFloat(currentIndex - index))
-                    .animation(.interactiveSpring(response: 0.9, dampingFraction: 0.8, blendDuration: 0.5).delay(currentIndex == index ? 0.2 : 0), value: currentIndex)
+                    .animation(.interactiveSpring(response: 0.7, dampingFraction: 0.8, blendDuration: 0.5).delay(currentIndex == index ? 0.2 : 0), value: currentIndex)
                     .fontWeight(.bold)
-                    .font(.system(size: 35, weight: .regular, design: .default))
+                    .font(.system(size: UIScreen.main.bounds.height < 1335 ? 24: 35, weight: .regular, design: .default))
                 
                 
                 Text(intro.description)
                     .multilineTextAlignment(.center)
-                    .padding(.horizontal,30)
+                   // .padding(.horizontal,30)
                     .offset(x: -size.width * CGFloat(currentIndex - index))
-                    .animation(.interactiveSpring(response: 0.9, dampingFraction: 0.8, blendDuration: 0.5).delay(0.1), value: currentIndex)
-                    .font(.system(size: 23, weight: .thin, design: .default))
-                // .fontWeight(.light)
+                    .animation(.interactiveSpring(response: 0.7, dampingFraction: 0.8, blendDuration: 0.5).delay(0.1), value: currentIndex)
+                    .font(.system(size: UIScreen.main.bounds.height < 1335 ? 18 : 23, weight: .thin, design: .default))
                     .italic()
             }
-            //.padding(.vertical, 30)
+            .padding(.leading)
+            .padding(.trailing)
         }
     }
     
@@ -170,7 +174,7 @@ struct StartView: View {
                 Image(systemName: "chevron.left")
                     .font(.title)
                     .fontWeight(.semibold)
-                    .foregroundColor(Color(.brown))
+                    .foregroundColor(Color(red: 26/255, green: 166/255, blue: 105/255))
             }
             Spacer()
             
@@ -179,7 +183,7 @@ struct StartView: View {
                 impactMed.impactOccurred()
                 showHomeView = true
             }
-            .foregroundColor(.brown)
+            .foregroundColor(Color(red: 26/255, green: 166/255, blue: 105/255))
             .opacity(isLast ? 0 : 1)
             .animation(.easeInOut, value: isLast)
         }
@@ -196,15 +200,17 @@ struct StartView: View {
         GeometryReader{
             let size =  $0.size
             
-            VStack(spacing: 20)
+            VStack(spacing: 30)
             {
                 Image("intro")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: size.width, height: size.height / 2)
                     .shadow(radius: 10)
+                
                 Spacer()
-                VStack(spacing: 15){
+                
+                VStack(spacing: UIScreen.main.bounds.height < 1335 ? 12 : 20){
                     
                     Text("Parti Zamanı 🎉")
                         .multilineTextAlignment(.center)
@@ -216,13 +222,15 @@ struct StartView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 30)
                     
+                    Spacer()
+                    
                     Text("Nasıl Oynanır?")
                         .padding(.horizontal, 40)
                         .padding(.vertical, 14)
                         .foregroundColor(.white)
                         .background{
                             Capsule()
-                                .fill(Color(.brown))
+                                .fill(Color(red: 26/255, green: 166/255, blue: 105/255))
                         }
                         .shadow(radius: 5)
                         .onTapGesture {

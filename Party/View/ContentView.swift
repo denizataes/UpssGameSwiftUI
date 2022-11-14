@@ -7,9 +7,7 @@ struct ContentView: View {
     @Namespace var namespace
     @StateObject var categoryController = CategoryController()
     @State var showHome : Bool = false
-    
-    
-    
+
     var body: some View {
         
         VStack{
@@ -47,7 +45,7 @@ struct ContentView: View {
             {
                 ActivityIndicator()
                     .frame(width: 80,height: 80)
-                    .foregroundColor(.pink)
+                    .foregroundColor(Color(red: 26/255, green: 166/255, blue: 105/255))
                 
             }
         }
@@ -57,36 +55,6 @@ struct ContentView: View {
         .shadow(radius: 20)
         .navigationTitle("Kategoriler 🔥")
         .navigationBarTitleDisplayMode(.large)
-        
-        
-//        ZStack{
-//
-//            Image("")
-//                .resizable()
-//                .frame(width: getScreenBounds().height / 20, height: getScreenBounds().height / 24)
-//                .clipShape(Circle())
-//                .overlay(Circle().stroke(Color.white, lineWidth: 3))
-//                .shadow(radius: 15)
-//                .onTapGesture {
-//                    let impactMed = UIImpactFeedbackGenerator(style: .light)
-//                    impactMed.impactOccurred()
-//                    showHomeView.toggle()
-//                }
-//            Text("🤔")
-//                .font(.system(size: getScreenBounds().height / 56, weight: .regular, design: .default))
-//        }
-//        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-//        .ignoresSafeArea(.all, edges: .bottom)
-//        .padding(.vertical,getScreenBounds().height/150)
-//        .padding(.horizontal,getScreenBounds().width/30)
-
-
-        
-            
-            //getScreenBounds().height < 500 ? .trailing : .horizontal)
-        
-        
-        
     }
     
     

@@ -9,11 +9,11 @@ struct Intro: Identifiable{
 }
 
 var intros: [Intro] = [
-    .init(imageName: "cheers", title: "BEN HİÇ...",
+    .init(imageName: "introImage1", title: "BEN HİÇ...",
           description: "Bu tür kartlarda yazanı yapmış olanlar içer..."),
-    .init(imageName: "cheers3", title: "OYLAMA SORULARI",
+    .init(imageName: "introImage2", title: "OYLAMA SORULARI",
           description: "Bu tür kartlarda sorulan soru için oylama yapılır, en çok oyu alan oyuncu içer."),
-    .init(imageName: "cheers3", title: "DOĞRULUK MU CESARETLİK Mİ?",
+    .init(imageName: "introImage3", title: "DOĞRULUK MU CESARETLİLİK Mİ?",
           description: "Bu tür kartlar eğlence için var. İçip içmemek size kalmış.")
     ]
 

@@ -6,38 +6,21 @@ struct QuestionView: View {
     
     var categoryName: String
     var categoryImage: String
-    @StateObject var questionController = QuestionController()
+
     @State var cards: [Question] = []
     @State var showAddPopUp: Bool = false
     
     var body: some View {
         ZStack{
-         
-
-            if questionController.loading{
-                ActivityIndicator()
-                    .frame(width: 100,height: 100)
-                    .foregroundColor(.white)
-            }
-            else
-            {
-                BoomerangCard(cards: $cards)
+            BoomerangCard(categoryName: categoryName, cards: $cards)
                     
                     .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height/1.55)
                     .padding(.horizontal, 15)
-                    .onAppear{
-                        setupCards()
-                    }
                     .offset(y:50)
-            }
-            
+
             AddQuestionView(showAddPopUp: $showAddPopUp,categoryName: categoryName)
-            
-            
         }
-        .onAppear{
-            questionController.getQuestion(categoryName: categoryName)
-        }
+
         .background(
             Image(categoryName == "Erkekler" ? "boys" :
                     (categoryName == "Kızlar" ? "girls" :
@@ -82,28 +65,7 @@ struct QuestionView: View {
                     }
                     
                 }))
-                
     }
-    
-
-    func setupCards(){
-        
-        var count = 1
-        for question in questionController.questionList{
-            if count > 6 {
-                count = 1
-            }
-            cards.append(.init(question: question, image: count == 1 ? "background" : "background\(count)"))
-            count += 1
-        }
-        cards.shuffle()
-        
-        if var first = cards.first{
-            first.id = UUID().uuidString
-            cards.append(first)
-        }
-    }
-    
 }
 
 
@@ -115,35 +77,110 @@ struct QuestionView_Previews: PreviewProvider {
 struct BoomerangCard: View {
     var isRotationEnabled: Bool = true
     var isBlurEnabled: Bool = false
+    var categoryName:String
     @Binding var cards: [Question]
-    
+    @StateObject var questionController = QuestionController()
     
     //MARK : Gesture Properties
     @State var offset: CGFloat = 0
     @State var currentIndex: Int = 0
     @State var colorIndex :Int = 0
+    @State var cardCount: Int = 0
+    @State var incrementValue: Int = 12
+    @State var isEnd : Bool = false
     
     var body: some View {
         GeometryReader{
             let size = $0.size
             
-            ZStack{
-                ForEach(cards.reversed()) { card in
-                    CardView(card: card, size: size)
-                    // MARK: Moving Only Current Active Card
-                        .offset(y: currentIndex == indexOf(card: card) ? offset : 0)
+            if questionController.loading{
+                ZStack{
+                    ActivityIndicator()
+                        .foregroundColor(.white)
+                        .frame(width: 80, height: 80)
+                }.frame(maxWidth: .infinity,maxHeight: .infinity)
+            }else{
+                ZStack{
+                    ForEach(cards.reversed()) { card in
+                        CardView(card: card, size: size)
+                        // MARK: Moving Only Current Active Card
+                            .offset(y: currentIndex == indexOf(card: card) ? offset : 0)
+                        
+                    }
                     
                 }
-                
+                .onAppear{
+                    setupCards()
+                }
+                .animation(.spring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7), value: offset == .zero)
+                .frame(width: size.width, height: size.height)
+                .contentShape(Rectangle())
+                .gesture(
+                    DragGesture(minimumDistance: 2)
+                        .onChanged(onChanged(value:))
+                        .onEnded(onEnded(value:))
+                )
             }
-            .animation(.spring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7), value: offset == .zero)
-            .frame(width: size.width, height: size.height)
-            .contentShape(Rectangle())
-            .gesture(
-                DragGesture(minimumDistance: 2)
-                    .onChanged(onChanged(value:))
-                    .onEnded(onEnded(value:))
-            )
+          
+        }
+        .onAppear{
+            questionController.getQuestion(categoryName: categoryName)
+        }
+    }
+    
+    func setupCards(){
+        
+        var imageCount = 1
+        
+        
+        
+        if cardCount == questionController.questionList.count {
+            isEnd.toggle()
+            cardCount = 0
+            incrementValue = 10
+            for i in cardCount...cardCount + incrementValue {
+
+                if imageCount > 6 {
+                    imageCount = 1
+                }
+
+                cards.append(.init(question: questionController.questionList[i], image: imageCount == 1 ? "background" : "background\(imageCount)"))
+                imageCount += 1
+            }
+            
+        }
+        else if cardCount + incrementValue < questionController.questionList.endIndex{
+            
+            for i in cardCount...cardCount + incrementValue {
+                
+                if imageCount > 6 {
+                    imageCount = 1
+                }
+         
+                cards.append(.init(question: questionController.questionList[i], image: imageCount == 1 ? "background" : "background\(imageCount)"))
+                imageCount += 1
+            }
+        }
+        else
+        {
+            incrementValue = questionController.questionList.endIndex - cardCount
+            for i in cardCount...cardCount + incrementValue - 1 {
+                
+                if imageCount > 6 {
+                    imageCount = 1
+                }
+                print(questionController.questionList.endIndex)
+                cards.append(.init(question: questionController.questionList[i], image: imageCount == 1 ? "background" : "background\(imageCount)"))
+                imageCount += 1
+            }
+            
+        }
+        
+        cards.shuffle()
+        
+        if var first = cards.first{
+            first.id = UUID().uuidString
+            cards.append(first)
         }
     }
     
@@ -162,7 +199,7 @@ struct BoomerangCard: View {
         translation = (currentIndex == (cards.count - 1) ? 0 : translation)
         // MARK: Since our card height = 220
         if translation > 85{
-            
+          
             withAnimation(.spring(response: 0.5,dampingFraction: 0.6,blendDuration: 0.6)){
                 // applying rotation and extra offset
                 
@@ -220,13 +257,20 @@ struct BoomerangCard: View {
                 }
                 
             }
+            
+            if currentIndex >= incrementValue - 1 {
+                cards.removeAll()
+                currentIndex = 0
+                setupCards()
+            }
+            
+            cardCount += 1
+            
         }else{
             offset = .zero
         }
         let impactMed = UIImpactFeedbackGenerator(style: .soft)
         impactMed.impactOccurred()
-
-        
     }
     
     
