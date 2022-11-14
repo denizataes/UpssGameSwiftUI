@@ -1,17 +1,9 @@
-//
-//  CategoryController.swift
-//  Party
-//
-//  Created by Deniz Ata Eş on 28.10.2022.
-//
-
 import Foundation
 import FirebaseFirestore
 
 class CategoryController: ObservableObject{
     @Published var categoryList = [Category]()
     @Published var state: State = .loading
-    
     
     enum State {
         case loading

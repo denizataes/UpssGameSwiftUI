@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6338638668368882902AEB00 /* Pods_Party.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE5569C6661344BB2BC4E07 /* Pods_Party.framework */; };
 		A0549FCF2920D9EC0002FBAB /* AddQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0549FCE2920D9EC0002FBAB /* AddQuestionView.swift */; };
+		A06AA56B2922BA0D00F3BB98 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A06AA56A2922BA0D00F3BB98 /* Launch.storyboard */; };
 		A07279DB290BFFDB00F5AC4B /* PartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07279DA290BFFDB00F5AC4B /* PartyApp.swift */; };
 		A07279DD290BFFDB00F5AC4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07279DC290BFFDB00F5AC4B /* ContentView.swift */; };
 		A07279DF290BFFDC00F5AC4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A07279DE290BFFDC00F5AC4B /* Assets.xcassets */; };
@@ -25,9 +26,6 @@
 		A0A88FCF29169A6A00F668CE /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A88FCE29169A6A00F668CE /* StartView.swift */; };
 		A0A88FD12916A5C600F668CE /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A88FD02916A5C600F668CE /* Intro.swift */; };
 		A0A88FD32916A95200F668CE /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A88FD22916A95200F668CE /* GifImage.swift */; };
-		A0A88FD72916ADD400F668CE /* cheers.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0A88FD62916ADD300F668CE /* cheers.gif */; };
-		A0A88FDA2916B30100F668CE /* cheers2.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0A88FD82916B30000F668CE /* cheers2.gif */; };
-		A0A88FDB2916B30100F668CE /* cheers3.gif in Resources */ = {isa = PBXBuildFile; fileRef = A0A88FD92916B30100F668CE /* cheers3.gif */; };
 		A0A88FE0291706EB00F668CE /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A88FDF291706EB00F668CE /* FontManager.swift */; };
 		A0A88FE1291707FB00F668CE /* Piepie-W01-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0A88FDD2917065100F668CE /* Piepie-W01-Regular.ttf */; };
 		A0A88FE42917107700F668CE /* AlfaSlabOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0A88FE32917107700F668CE /* AlfaSlabOne-Regular.ttf */; };
@@ -37,6 +35,7 @@
 		1AE5569C6661344BB2BC4E07 /* Pods_Party.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Party.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81A403D12A04EAC55DCE9649 /* Pods-Party.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Party.debug.xcconfig"; path = "Target Support Files/Pods-Party/Pods-Party.debug.xcconfig"; sourceTree = "<group>"; };
 		A0549FCE2920D9EC0002FBAB /* AddQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestionView.swift; sourceTree = "<group>"; };
+		A06AA56A2922BA0D00F3BB98 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		A07279D7290BFFDB00F5AC4B /* Party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Party.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A07279DA290BFFDB00F5AC4B /* PartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyApp.swift; sourceTree = "<group>"; };
 		A07279DC290BFFDB00F5AC4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,9 +53,6 @@
 		A0A88FCE29169A6A00F668CE /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		A0A88FD02916A5C600F668CE /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		A0A88FD22916A95200F668CE /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
-		A0A88FD62916ADD300F668CE /* cheers.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cheers.gif; sourceTree = "<group>"; };
-		A0A88FD82916B30000F668CE /* cheers2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cheers2.gif; sourceTree = "<group>"; };
-		A0A88FD92916B30100F668CE /* cheers3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cheers3.gif; sourceTree = "<group>"; };
 		A0A88FDD2917065100F668CE /* Piepie-W01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Piepie-W01-Regular.ttf"; sourceTree = "<group>"; };
 		A0A88FDF291706EB00F668CE /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		A0A88FE32917107700F668CE /* AlfaSlabOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlfaSlabOne-Regular.ttf"; sourceTree = "<group>"; };
@@ -106,9 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				A0A88FDC2917058F00F668CE /* Fonts */,
-				A0A88FD62916ADD300F668CE /* cheers.gif */,
-				A0A88FD82916B30000F668CE /* cheers2.gif */,
-				A0A88FD92916B30100F668CE /* cheers3.gif */,
 				A07279F7290C692600F5AC4B /* Controller */,
 				A07279F5290C630E00F5AC4B /* GoogleService-Info.plist */,
 				A07279F2290C093600F5AC4B /* View */,
@@ -116,6 +109,7 @@
 				A07279DA290BFFDB00F5AC4B /* PartyApp.swift */,
 				A07279DE290BFFDC00F5AC4B /* Assets.xcassets */,
 				A07279E0290BFFDC00F5AC4B /* Preview Content */,
+				A06AA56A2922BA0D00F3BB98 /* Launch.storyboard */,
 			);
 			path = Party;
 			sourceTree = "<group>";
@@ -240,14 +234,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06AA56B2922BA0D00F3BB98 /* Launch.storyboard in Resources */,
 				A0A88FE1291707FB00F668CE /* Piepie-W01-Regular.ttf in Resources */,
-				A0A88FD72916ADD400F668CE /* cheers.gif in Resources */,
 				A0A88FE42917107700F668CE /* AlfaSlabOne-Regular.ttf in Resources */,
 				A07279E2290BFFDC00F5AC4B /* Preview Assets.xcassets in Resources */,
-				A0A88FDA2916B30100F668CE /* cheers2.gif in Resources */,
 				A07279DF290BFFDC00F5AC4B /* Assets.xcassets in Resources */,
 				A07279F6290C630E00F5AC4B /* GoogleService-Info.plist in Resources */,
-				A0A88FDB2916B30100F668CE /* cheers3.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Party/Preview Content\"";
@@ -448,11 +441,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Party/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Upss;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = Launch.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,6 +467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Party/Preview Content\"";
@@ -479,11 +475,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Party/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Upss;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = Launch.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
