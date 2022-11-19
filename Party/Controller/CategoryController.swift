@@ -22,11 +22,11 @@ class CategoryController: ObservableObject{
                     DispatchQueue.main.async {
                         self.categoryList = snapshot.documents.map{ d in
                             
-                            return Category(id: d.documentID,
+                            return Category(id: d["id"] as? Int ?? 0,
                                             name: d["Name"] as? String ?? "",
                                             description: d["Description"] as? String ?? "",
                                             image: d["Image"] as? String ?? "",
-                                            price: d["Price"] as? String ?? "")
+                                            isPriced: d["isPriced"] as? Bool ?? false)
                         }
                         self.state = .loaded
                     }

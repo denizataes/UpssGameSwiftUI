@@ -6,19 +6,32 @@ struct QuestionView: View {
     
     var categoryName: String
     var categoryImage: String
+    var isPriced: Bool
 
     @State var cards: [Question] = []
     @State var showAddPopUp: Bool = false
     
     var body: some View {
         ZStack{
-            BoomerangCard(categoryName: categoryName, cards: $cards)
-                    
+//            if !isPriced{
+                BoomerangCard(categoryName: categoryName, cards: $cards)
+                
                     .frame(width: UIScreen.main.bounds.width/1.1, height: UIScreen.main.bounds.height/1.55)
                     .padding(.horizontal, 15)
                     .offset(y:50)
-
-            AddQuestionView(showAddPopUp: $showAddPopUp,categoryName: categoryName)
+                    
+                
+                AddQuestionView(showAddPopUp: $showAddPopUp,categoryName: categoryName)
+//            }
+//            else
+//            {
+//                Text("Yok Öyle İş Uyanık")
+//                    .font(.largeTitle)
+//                    .foregroundColor(.white)
+//                    .bold()
+//            }
+            
+            
         }
 
         .background(
@@ -71,7 +84,7 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(categoryName: "girls", categoryImage: "girlsBackground")
+        QuestionView(categoryName: "girls", categoryImage: "girlsBackground",isPriced: false)
     }
 }
 struct BoomerangCard: View {

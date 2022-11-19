@@ -200,15 +200,21 @@ struct StartView: View {
         GeometryReader{
             let size =  $0.size
             
-            VStack(spacing: 30)
+            VStack(spacing: 0)
             {
-                Image("intro")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: size.width, height: size.height / 2)
-                    .shadow(radius: 10)
+                VStack{
+                    Image("intro")
+                        .resizable()
+//                         .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height/2)
+                        .aspectRatio(contentMode: .fill)
+                  
+                       
+                }
                 
-                Spacer()
+                
+                
+
+                
                 
                 VStack(spacing: UIScreen.main.bounds.height < 1335 ? 12 : 20){
                     

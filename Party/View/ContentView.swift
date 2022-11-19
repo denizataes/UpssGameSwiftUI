@@ -17,23 +17,50 @@ struct ContentView: View {
                     
                     HStack{
                         
-                        ForEach(categoryController.categoryList){
+                        ForEach(categoryController.categoryList.sorted(by: {$0.id < $1.id})){
                             category in
                             
-                            NavigationLink(
+                      //      if category.name != "Sevgililer" {
                                 
-                                destination: QuestionView(categoryName: category.name, categoryImage: category.image)
-                            )
-                            {
-                                Image(category.image)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: getScreenBounds().width/1.2, height: getScreenBounds().height/1.55)
-                                    .cornerRadius(20)
-                                    .padding(7)
-                                    .shadow(radius: 3)
-                                
-                            }
+                                NavigationLink(
+                                    destination: QuestionView(categoryName: category.name, categoryImage: category.image, isPriced: category.isPriced)
+                                )
+                                {
+                                    ZStack(alignment: .bottom){
+                                        Image(category.image)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: getScreenBounds().width/1.2, height: getScreenBounds().height/1.55)
+                                            .cornerRadius(20)
+                                            .padding(7)
+                                            .shadow(radius: 3)
+                                            .opacity(category.isPriced ? 0.6 : 1)
+                                            
+                                        
+                                        if category.isPriced{
+                                            VStack{
+                                                Image(systemName: "lock")
+                                                    .resizable()
+                                                    .frame(width: 36, height: 48)
+                                                    .foregroundColor(.white)
+                                                
+                                                Text("Bu Kategori Ücretlidir!")
+                                                    .font(.caption)
+                                                    .foregroundColor(.white)
+                                                    .bold()
+                                                    .italic()
+                                            }
+                                            .padding(.vertical,30)
+                                            
+                                            
+                                   
+                                              
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                           // }
                         }
                         
                     }

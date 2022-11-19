@@ -1,10 +1,10 @@
 import Foundation
 
 struct Category: Identifiable{
-    var id: String
+    var id: Int
     var name: String
     var description: String
     var image: String
-    var price: String
+    var isPriced: Bool
 }
 
